@@ -1,4 +1,8 @@
 <?php
+echo $_SERVER['DOCUMENT_ROOT'];
+ include($_SERVER['DOCUMENT_ROOT'].'../core/header.php');
+?>
+<?php
 echo "irhfjfjnknf";
 ?>
 <!DOCTYPE html>
@@ -12,3 +16,6 @@ echo "irhfjfjnknf";
 <body>
 </body>
 </html>
+<?php
+ include('../core/footer.php');
+?>
