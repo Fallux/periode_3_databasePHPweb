@@ -4,8 +4,7 @@
     include('../core/header.php');
     include('../core/checklogin_admin.php');
 ?>
-
-<h1>Gebruiker bewerken</h1>
+sssssssssss
 
 <?php
 //prettyDump($_POST);
@@ -30,6 +29,7 @@
     }
 ?>
 
+<h1>Gebruiker bewerken</h1>
 
 
 <form action="" method="POST">
@@ -56,7 +56,6 @@
 
     }
 ?>
-<br>
 <input type="submit" name="submit" value="Opslaan">
 </form>
 

@@ -5,8 +5,6 @@
     include('../core/checklogin_admin.php');
 ?>
 
-<h1>Gebruiker toevoegen</h1>
-
 <?php
     if (isset($_POST['email']) && $_POST['email'] != "") {
         $email = $con->real_escape_string($_POST['email']);
@@ -18,7 +16,6 @@
             $liqry->bind_param('s',$email);
             if($liqry->execute()){
                 echo "admin user met email " . $email . " toegevoegd.";
-                
             }
         }
         $liqry->close();
@@ -27,8 +24,8 @@
 ?>
 
 <form action="" method="POST">
-email: <input type="text" name="email" value=""><br><br>
-<input type="submit" name="submit" value="Toevoegen">
+email: <input type="text" name="email" value=""><br>
+<input type="submit" name="submit" value="Opslaan">
 </form>
 
 

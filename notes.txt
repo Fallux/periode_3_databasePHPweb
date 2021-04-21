@@ -1,0 +1,4 @@
+coloms = array('colom naam', 'colom naam', 'colom naam')
+
+
+foreach (coloms AS colom) // AS is eigenlijk hetzelfe var.naam = getelelementid teken maar dan in de database manier

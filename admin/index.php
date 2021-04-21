@@ -1,5 +1,5 @@
 <?php
-    include('core/header.php');
+    include($_SERVER['DOCUMENT_ROOT'] . '/de_echte_periode3/webshop_periode3/core/header.php');
 
     if (isset($_POST['submit']) && $_POST['submit'] != '') {
         //default user: test@test.nl
@@ -11,7 +11,7 @@
         if($liqry === false) {
             trigger_error(mysqli_error($con));
         } else{
-            $liqry->bind_param('s',$email);
+            $liqry->bind_param('s',$email);//s for string
             $liqry->bind_result($adminId,$email,$dbHashPassword);
             if($liqry->execute()){
                 $liqry->store_result();

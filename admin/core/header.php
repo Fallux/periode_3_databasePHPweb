@@ -1,6 +1,6 @@
 <?php
-   echo $_SERVER['DOCUMENT_ROOT'];
-    include($_SERVER['DOCUMENT_ROOT'].'../core/db_connect.php');
+//    echo $_SERVER['DOCUMENT_ROOT'];
+    include($_SERVER['DOCUMENT_ROOT'].'/de_echte_periode3/webshop_periode3/core/db_connect.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
