@@ -9,23 +9,21 @@
 <h1>Product toevoegen</h1>
 
 <?php
-    if (isset($_POST['product_name']) && $_POST['product_name'] != "") {
-        $product_id     = $con->real_escape_string($_POST['product_name']);
-        $name           = $con->real_escape_string($_POST['product_name']);
-        $description    = $con->real_escape_string($_POST['product_name']);
-        $category_id    = $con->real_escape_string($_POST['product_name']);
-        $price          = $con->real_escape_string($_POST['product_name']);
-        $color          = $con->real_escape_string($_POST['product_name']);
-        $weight         = $con->real_escape_string($_POST['product_name']);
-        $active         = $con->real_escape_string($_POST['product_name']);
+    if (isset($_POST['name']) && $_POST['name'] != "") {
+        $name           = $con->real_escape_string($_POST['name']);
+        $description    = $con->real_escape_string($_POST['description']);
+        $category_id    = $con->real_escape_string($_POST['category_id']);
+        $price          = $con->real_escape_string($_POST['price']);
+        $color          = $con->real_escape_string($_POST['color']);
+        $weight         = $con->real_escape_string($_POST['weight']);
+        $active         = $con->real_escape_string($_POST['active']);
 
-        $liqry = $con->prepare("INSERT INTO product (product_id, name,description,category_id, price,color, weight, active) VALUES (?)");
+        $liqry = $con->prepare("INSERT INTO product (name,description,category_id, price,color, weight, active) VALUES (?,?,?,?,?,?,?)");
         if($liqry === false) {
            echo mysqli_error($con);
         } else{
-            $liqry->bind_param('s',$product_id, $name, $description,$category_id,$price,$color,$weight,$active);
+            $liqry->bind_param('ssiisii', $name, $description,$category_id,$price,$color,$weight,$active);
             if($liqry->execute()){
-                echo "product_id "  . $product_id . " toegevoegd.";
                 echo "name "        . $name . " toegevoegd.";
                 echo "description " . $description . " toegevoegd.";
                 echo "category_id " . $category_id . " toegevoegd.";
@@ -33,7 +31,6 @@
                 echo "color "       . $color . " toegevoegd.";
                 echo "weight "      . $weight . " toegevoegd.";
                 echo "active "      . $active . " toegevoegd.";
-                
             }
         }
         $liqry->close();

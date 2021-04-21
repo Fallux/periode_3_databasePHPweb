@@ -5,7 +5,7 @@
     include('../core/checklogin_admin.php');
 ?>
 
-<h1>Gebruiker verwijderen</h1>
+<h1>Product verwijderen</h1>
 
 <?php
 //prettyDump($_POST);
