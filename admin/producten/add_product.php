@@ -10,15 +10,29 @@
 
 <?php
     if (isset($_POST['product_name']) && $_POST['product_name'] != "") {
-        $email = $con->real_escape_string($_POST['product_name']);
+        $product_id     = $con->real_escape_string($_POST['product_name']);
+        $name           = $con->real_escape_string($_POST['product_name']);
+        $description    = $con->real_escape_string($_POST['product_name']);
+        $category_id    = $con->real_escape_string($_POST['product_name']);
+        $price          = $con->real_escape_string($_POST['product_name']);
+        $color          = $con->real_escape_string($_POST['product_name']);
+        $weight         = $con->real_escape_string($_POST['product_name']);
+        $active         = $con->real_escape_string($_POST['product_name']);
 
         $liqry = $con->prepare("INSERT INTO product (product_id, name,description,category_id, price,color, weight, active) VALUES (?)");
         if($liqry === false) {
            echo mysqli_error($con);
         } else{
-            $liqry->bind_param('s',$email);
+            $liqry->bind_param('s',$product_id, $name, $description,$category_id,$price,$color,$weight,$active);
             if($liqry->execute()){
-                echo "admin user met email " . $email . " toegevoegd.";
+                echo "product_id "  . $product_id . " toegevoegd.";
+                echo "name "        . $name . " toegevoegd.";
+                echo "description " . $description . " toegevoegd.";
+                echo "category_id " . $category_id . " toegevoegd.";
+                echo "price "       . $price . " toegevoegd.";
+                echo "color "       . $color . " toegevoegd.";
+                echo "weight "      . $weight . " toegevoegd.";
+                echo "active "      . $active . " toegevoegd.";
                 
             }
         }
