@@ -11,8 +11,6 @@
 <?php
 //prettyDump($_POST);
     if (isset($_POST['submit']) && $_POST['submit'] != '') {
-        //default user: test@test.nl
-        //default password: test123
         $product_id     = $con->real_escape_string($_POST['product_id']);
         $name           = $con->real_escape_string($_POST['name']);
         $description    = $con->real_escape_string($_POST['description']);
@@ -22,7 +20,7 @@
         $weight         = $con->real_escape_string($_POST['weight']);
         $active         = $con->real_escape_string($_POST['active']);
 
-        $query1 = $con->prepare("DELETE FROM product WHERE product_id, name, description,category_id, price, color, weight, active = ? LIMIT 1;");
+        $query1 = $con->prepare("DELETE FROM product WHERE product_id = ? LIMIT 1;");
         if ($query1 === false) {
             echo mysqli_error($con);
         }
@@ -40,8 +38,8 @@
 
 
 <?php
-    if (isset($_GET['uid']) && $_GET['uid'] != '') {
-        // if (isset($_GET['product_id']) && $_GET['product_id'] != '') {
+    // if (isset($_GET['uid']) && $_GET['uid'] != '') {
+        if (isset($_GET['product_id']) && $_GET['product_id'] != '') {
 
 
         ?>
@@ -50,15 +48,7 @@
         <h2 style="color: red">weet je zeker dat je deze gebruiker wilt verwijderen?</h2><?php
 
         $product_id     = $con->real_escape_string($_GET['product_id']);
-        $name           = $con->real_escape_string($_GET['name']);
-        $description    = $con->real_escape_string($_GET['description']);
-        $category_id    = $con->real_escape_string($_GET['category_id']);
-        $price          = $con->real_escape_string($_GET['price']);
-        $color          = $con->real_escape_string($_GET['color']);
-        $weight         = $con->real_escape_string($_GET['weight']);
-        $active         = $con->real_escape_string($_GET['active']);
-
-        $liqry = $con->prepare("SELECT product_id,name,description,category_id,price,color,weight,active FROM product WHERE product_id = ? LIMIT 1;");
+           $liqry = $con->prepare("SELECT product_id,name,description,category_id,price,color,weight,active FROM product WHERE product_id = ? LIMIT 1;");
         if($liqry === false) {
            echo mysqli_error($con);
         } else{

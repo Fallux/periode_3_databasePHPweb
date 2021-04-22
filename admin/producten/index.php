@@ -46,8 +46,8 @@
                         <td><?php echo $color; ?></td>
                         <td><?php echo $weight; ?></td>
                         <td><?php echo $active; ?></td>
-                        <td><a href="edit_product.php?uid=<?php echo $product_id; ?>">edit</a></td>
-                        <td><a href="delete_product.php?uid=<?php echo $product_id; ?>">delete</a></td>
+                        <td><a href="edit_product.php?product_id=<?php echo $product_id; ?>">edit</a></td>
+                        <td><a href="delete_product.php?product_id=<?php echo $product_id; ?>">delete</a></td>
                     </tr>
                     <?php 
                 }
