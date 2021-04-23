@@ -37,7 +37,7 @@ if (isset($_POST['submit']) && $_POST['submit'] != '') {
     if (isset($_GET['category_id']) && $_GET['category_id'] != '') {
         $category_id = $con->real_escape_string($_GET['category_id']);
 
-        $liqry = $con->prepare("SELECT category_id,name,description,category_id,price,color,weight,active FROM category WHERE category_id = ? LIMIT 1;");
+        $liqry = $con->prepare("SELECT category_id,name,description,active FROM category WHERE category_id = ? LIMIT 1;");
         if($liqry === false) {
            echo mysqli_error($con);
         } else{

@@ -4,7 +4,7 @@
 ?>
 <ul>
     <li><a href="users/">Gebruikers</a></li>
-    <li><a href="orders/">Bestellingen</a></li>
+    <li><a href="category/">Category</a></li>
     <li><a href="producten">Producten</a></li>
 </ul>
 <?php
