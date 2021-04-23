@@ -9,7 +9,7 @@
 <h1>Customers overzicht</h1>
 
 <?php
-        $liqry = $con->prepare("SELECT customer_id,gender,firts_name,middle_name,last_name,street,house_number,house_number_addon,zip_code,city,phone,emailadres,password,newsletter_subscription,date_added FROM customer");
+        $liqry = $con->prepare("SELECT customer_id,gender,first_name,middle_name,last_name,street,house_number,house_number_addon,zip_code,city,phone,emailadres,password,newsletter_subscription,date_added FROM customer");
         if($liqry === false) {
            echo mysqli_error($con);
         } else{
@@ -47,14 +47,13 @@
                         <tr>
                         <td><?php echo $customer_id; ?></td>
                         <td><?php echo $gender; ?></td>
-                        <td><?php echo $front_name; ?></td>
+                        <td><?php echo $first_name; ?></td>
                         <td><?php echo $middle_name; ?></td>
                         <td><?php echo $last_name; ?></td>
                         <td><?php echo $street; ?></td>
                         <td><?php echo $house_number; ?></td>
                         <td><?php echo $house_number_addon; ?></td>
                         <td><?php echo $zip_code; ?></td>
-                        <td><?php echo $color; ?></td>
                         <td><?php echo $city; ?></td>
                         <td><?php echo $phone; ?></td>
                         <td><?php echo $emailadres; ?></td>
