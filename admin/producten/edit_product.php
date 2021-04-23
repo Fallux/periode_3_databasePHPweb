@@ -60,20 +60,20 @@
                     echo 'description: ';
                     echo '<input type="text" name="description" value="' . $description . '" /><br>';
 
-                    echo '$category_id: ' . $category_id . '<br>';
-                    echo '<input type="number" name="category_id" value="' . $category_id . '" />';
+                    echo 'category_id: ';
+                    echo '<input type="number" name="category_id" value="' . $category_id . '" /><br>';
 
-                    echo '$price: ' . $price . '<br>';
-                    echo '<input type="number" name="price" value="' . $price . '" />';
+                    echo 'price: ';
+                    echo '<input type="number" name="price" value="' . $price . '" /><br>';
 
-                    echo '$color: ' . $color . '<br>';
-                    echo '<input type="text" name="color" value="' . $color . '" />';
+                    echo 'color: ';
+                    echo '<input type="text" name="color" value="' . $color . '" /><br>';
 
-                    echo '$weight: ' . $weight . '<br>';
-                    echo '<input type="text" name="weight" value="' . $weight . '" />';
+                    echo 'weight: ';
+                    echo '<input type="text" name="weight" value="' . $weight . '" /><br>';
 
-                    echo '$active: ' . $active . '<br>';
-                    echo '<input type="number" name="active" value="' . $active . '" />';
+                    echo 'active: ';
+                    echo '<input type="number" name="active" value="' . $active . '" /><br>';
 ;
                 }
             }
