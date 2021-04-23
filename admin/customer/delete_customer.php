@@ -101,8 +101,8 @@
                     echo '$newsletter_subscription: ' . $newsletter_subscription . '<br>';
                     echo '<input type="hidden" name="newsletter_subscription" value="' . $newsletter_subscription . '" />';
 
-                    echo '$$date_added: ' . $$date_added . '<br>';
-                    echo '<input type="hidden" name="$date_added" value="' . $$date_added . '" />';
+                    echo '$date_added: ' . $date_added . '<br>';
+                    echo '<input type="hidden" name="$date_added" value="' . $date_added . '" />';
 
                 }
             }
