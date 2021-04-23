@@ -14,7 +14,7 @@
         $description    = $con->real_escape_string($_POST['description']);
         $active         = $con->real_escape_string($_POST['active']);
 
-        $liqry = $con->prepare("INSERT INTO category (category_id,name,description, active) VALUES (?,?,?,?)");
+        $liqry = $con->prepare("INSERT INTO category (name,description, active) VALUES (?,?,?)");
         if($liqry === false) {
            echo mysqli_error($con);
         } else{
@@ -31,7 +31,7 @@
 ?>
 
 <form action="" method="POST">
-category_id: <input type="text" name="category_id" value=""><br><br>
+<!-- category_id: <input type="text" name="category_id" value=""><br><br> -->
 name: <input type="text" name="name" value=""><br><br>
 description: <input type="text" name="description" value=""><br><br>
 active: <input type="text" name="active" value=""><br><br>

@@ -1,5 +1,4 @@
 
 
-category CRUD systeem maken
-klanten toevoegen database
-CRUD systeem maken
+
+CRUD systeem van klanten maken
