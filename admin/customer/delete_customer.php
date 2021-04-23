@@ -6,7 +6,7 @@
     include('customer-menu.php')
 ?>
 
-<h1>Product verwijderen</h1>
+<h1>customer verwijderen</h1>
 
 <?php
 //prettyDump($_POST);
@@ -25,7 +25,6 @@
         $emailadres         = $con->real_escape_string($_POST['emailadres']);
         $password         = $con->real_escape_string($_POST['password']);
         $newsletter_subscription         = $con->real_escape_string($_POST['newsletter_subscription']);
-        $date_added         = $con->real_escape_string($_POST['date_added']);
 
         $query1 = $con->prepare("DELETE FROM customer WHERE customer_id = ? LIMIT 1;");
         if ($query1 === false) {
@@ -34,7 +33,7 @@
                     
         $query1->bind_param('i',$customer_id);
         if ($query1->execute() === false) {
-            echo mysqli_error($con);
+            echo mysqli_error($con . "customer delete fout");
         } else {
             echo '<div style="border: 2px solid red">Gebruiker met customer_id '.$customer_id.' verwijderd!</div>';
         }
@@ -55,9 +54,10 @@
         <h2 style="color: red">weet je zeker dat je deze customer wilt verwijderen?</h2><?php
 
         $customer_id     = $con->real_escape_string($_GET['customer_id']);
-           $liqry = $con->prepare("SELECT customer_id,gender,firts_name,middle_name,last_name,street,house_number,house_number_addon,zip_code,city,phone,emailadres,password,newsletter_subscription,date_added WHERE customer_id = ? LIMIT 1;");
+           $liqry = $con->prepare("SELECT customer_id,gender,first_name,middle_name,last_name,street,house_number,house_number_addon,zip_code,city,phone,emailadres,password,newsletter_subscription,date_added FROM customer WHERE customer_id = ? LIMIT 1;");
         if($liqry === false) {
            echo mysqli_error($con);
+           echo "regel" . __LINE__;
         } else{
             $liqry->bind_param('i',$customer_id);
             $liqry->bind_result($customer_id,$gender, $first_name,$middle_name,$last_name,$street,$house_number,$house_number_addon,$zip_code,$city,$phone,$emailadres,$password,$newsletter_subscription,$date_added);
@@ -73,7 +73,11 @@
                     echo '$first_name: ' . $first_name . '<br>';
                     echo '<input type="hidden" name="first_name" value="' . $first_name . '" />';
                     echo '$middle_name: ' . $middle_name . '<br>';
+                    echo '<input type="hidden" name="middle_name" value="' . $middle_name . '" />';
+                    
+                    echo '$last_name: ' . $last_name . '<br>';
                     echo '<input type="hidden" name="last_name" value="' . $last_name . '" />';
+
                     echo '$street: ' . $street . '<br>';
                     echo '<input type="hidden" name="street" value="' . $street . '" />';
 

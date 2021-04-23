@@ -50,7 +50,7 @@
 ?>
 
 <form action="" method="POST">
-customer_id: <input type="text" name="customer_id" value=""><br><br>
+<!-- customer_id: <input type="text" name="customer_id" value=""><br><br> -->
 first_name: <input type="text" name="name" value=""><br><br>
 middle_name: <input type="text" name="name" value=""><br><br>
 last_name: <input type="text" name="name" value=""><br><br>
