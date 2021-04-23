@@ -5,7 +5,7 @@
     include('../core/checklogin_admin.php');
 ?>
 
-<h1>Product bewerken</h1>
+<h1>customer bewerken</h1>
 
 <?php
 //prettyDump($_POST);
